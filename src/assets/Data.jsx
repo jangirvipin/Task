@@ -1,0 +1,1 @@
+export const DATA=["null","null","null","null","null"];
