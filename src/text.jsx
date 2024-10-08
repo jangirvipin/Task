@@ -57,7 +57,7 @@ export default function Text({state,handle,handle2,current,data}){
 <button onClick={handle2}  class="bg-black hover:bg-blue-400 mx-28 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
 Back
 </button>
-<button onClick={handle}  class="bg-black hover:bg-blue-400  text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+<button onClick={()=>{handleNext(),data(current+1,null)}}  class="bg-black hover:bg-blue-400  text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
 Skip
 </button>
                    
