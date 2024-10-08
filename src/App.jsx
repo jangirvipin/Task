@@ -28,7 +28,7 @@ function App() {
       }
 
     function data(a,b){
-      DATA[a-1]="INPUT FOR "+a+ "st"+ " "+"question"+" "+ "is" + " "+b;
+      DATA[a-1]= b;
       console.log(DATA[a]);
     }
 

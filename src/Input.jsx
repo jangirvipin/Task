@@ -1,24 +1,34 @@
- import {DATA} from "./assets/Data";
-export default function Input(){
+import React from "react";
+import {DATA} from "./assets/Data";
+
+const UserInputsDisplay = () => {
     return (
-        <div>
-        <div className="  h-screen flex justify-center bg-black text-white">
-        <div className=" flex flex-col justify-center items-center gap-y-5 ">
-                 
-                 <div className="flex text-3xl">
-              Your Input Data
-                 </div>
-                <div>
-            {DATA.map((item)=>(
-                <div>
-                    {item}
+        <div className="h-screen flex justify-center items-center  bg-gray-100">
+            <div className="bg-white shadow-lg rounded-lg p-8 px-24 max-w-md">
+                <h1 className="text-3xl font-bold mb-6 text-center">Your Responses</h1>
+                <div className="space-y-4">
+                    {DATA.map((input, index) => (
+                        <div key={index} className="p-4 px-10 border border-gray-300 rounded-md">
+                            <div className="flex items-center justify-between">
+                            <h2 className="text-xl font-semibold">Question {index + 1}:</h2>
+                            {input ? (
+                                <p className="text-lg ml-10 text-gray-700">{input}</p>
+                            ) : "null"}
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            ))}
+                <div className="mt-6 text-center">
+                    <button
+                        onClick={() => window.location.href = "/"} // Adjust navigation as needed
+                        className="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5"
+                    >
+                        Go Back
+                    </button>
+                </div>
             </div>
-           
         </div>
-              </div>
-              </div>
-        
-    )
-}
+    );
+};
+
+export default UserInputsDisplay;
